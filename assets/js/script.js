@@ -8,6 +8,59 @@ var generatePassword = function() {
     window.alert("Please select a value between 8 and 128.");
     generatePassword();
   }
+
+  var charSelect = function() {
+
+    // include lowercase characters
+    var charLower = window.prompt('Would you like to include lowercase characters?  Please enter "yes" or "no".');
+    
+    charLower = charLower.toLowerCase();
+
+    if (charLower === "no" || charLower === "n") {
+      charLower = "";
+    }
+    else {
+      charLower = "abcdefghijklmnopqrstuvwxyz";
+    }
+  
+    // include uppercase characters
+    var charUpper = window.prompt('Would you like to include uppercase characters?  Please enter "yes" or "no".');
+
+    charUpper = charUpper.toLowerCase();
+  
+    if (charUpper === "no" || charUpper === "n") {
+      charUpper = "";
+    }
+    else {
+      charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+  
+    // include numeric characters
+    var charNum = window.prompt('Would you like to include numbers?  Please enter "yes" or "no".');
+    
+    charNum = charNum.toLowerCase();
+
+    if (charNum === "no" || charNum === "n") {
+      charNum = "";
+    }
+    else {
+      charNum = "0123456789";
+    }
+  
+    // include special characters
+    var charSpec = window.prompt('Would you like to include special characters?  Please enter "yes" or "no".');
+
+    charSpec = charSpec.toLowerCase();
+
+    if (charSpec === "no" || charSpec === "n") {
+      charSpec = "";
+    }
+    else {
+      charSpec = "!@#$%&*+";
+    }
+  }
+
+  charSelect();
 }
 
 // Get references to the #generate element
