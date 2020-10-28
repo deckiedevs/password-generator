@@ -67,24 +67,24 @@ var charSelect = function() {
 var generatePassword = function() {
   
   // setting character length
-  var charLength = window.prompt('How long would you like your password to be?  Please enter a number between "8" and "128".');
-
-  if (charLength < 8 || charLength > 128) {
-    window.alert("Please select a value between 8 and 128.");
-    generatePassword();
+  var charLength = prompt('How long would you like your password to be?  Please enter a number between "8" and "128".');
+  charLength = parseInt(charLength);
+  console.log('Character length is ' + charLength);
+  
+  if (isNaN(charLength) || charLength < 8 || charLength > 128) {
+    return generatePassword();
   }
 
+  // generates password based on selected criteria
   var charSet = charSelect();
   var retPassword = "";
   
-  // generates password based on selected criteria
   for (var i = 0, n = charSet.length; i < charLength; i++) {
     retPassword += charSet.charAt(Math.floor(Math.random() * n));
   }
   console.log("Generated password is " + retPassword);
   
   return retPassword;
-  
 }
 
 // Get references to the #generate element
