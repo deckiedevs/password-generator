@@ -18,7 +18,7 @@ var generatePassword = function() {
 
     if (charLower === "no" || charLower === "n") {
       charLower = "";
-    }
+    }               
     else {
       charLower = "abcdefghijklmnopqrstuvwxyz";
     }
@@ -58,9 +58,33 @@ var generatePassword = function() {
     else {
       charSpec = "!@#$%&*+";
     }
+
+    // validates that at least one character type is selected
+    if (!charLower && !charUpper && !charNum && !charSpec) {
+      window.alert("Please choose at least one type of character.");
+      charSelect();
+    }
+    else {
+      // concatenates the selected character types
+      var charSet = charLower + charUpper + charNum + charSpec
+    }
+    
+    console.log("Character set is " + charSet);
+
+    return charSet
   }
 
-  charSelect();
+  var retPassword = "";
+  var charSet = charSelect();
+  
+  // generates password based on selected criteria
+  for (var i = 0, n = charSet.length; i < charLength; i++) {
+    retPassword += charSet.charAt(Math.floor(Math.random() * n));
+  }
+  console.log("Generated password is " + retPassword);
+  
+  return retPassword;
+  
 }
 
 // Get references to the #generate element
