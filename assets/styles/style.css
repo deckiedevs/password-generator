@@ -12,23 +12,32 @@ body,
   padding: 0;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
-}
-
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
+
+h1 {
+  padding: 0;
+  margin: 0;
+}  
+
+h2 {
+  margin-top: 0;
+}  
+
+body {
+  font-family: sans-serif;
+  background-color: #f9fbfd;
+}  
+
+.wrapper {
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}  
 
 .card {
   background-color: hsl(0, 0%, 100%);
@@ -52,6 +61,10 @@ header {
 
 .card-body {
   min-height: 100px;
+}
+
+.card-body ol {
+  line-height: 1.5;
 }
 
 .card-footer {
