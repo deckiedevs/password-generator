@@ -2,11 +2,9 @@
 var charSelect = function() {
 
   // include lowercase characters
-  var charLower = window.prompt('Would you like to include lowercase characters?  Please enter "yes" or "no".');
+  var charLower = confirm('Would you like to include lowercase characters?');
   
-  charLower = charLower.toLowerCase();
-
-  if (charLower === "no" || charLower === "n") {
+  if (!charLower) {
     charLower = "";
   }               
   else {
@@ -14,11 +12,9 @@ var charSelect = function() {
   }
 
   // include uppercase characters
-  var charUpper = window.prompt('Would you like to include uppercase characters?  Please enter "yes" or "no".');
+  var charUpper = confirm('Would you like to include uppercase characters?');
 
-  charUpper = charUpper.toLowerCase();
-
-  if (charUpper === "no" || charUpper === "n") {
+  if (!charUpper) {
     charUpper = "";
   }
   else {
@@ -26,11 +22,9 @@ var charSelect = function() {
   }
 
   // include numeric characters
-  var charNum = window.prompt('Would you like to include numbers?  Please enter "yes" or "no".');
-  
-  charNum = charNum.toLowerCase();
+  var charNum = confirm('Would you like to include numbers?');
 
-  if (charNum === "no" || charNum === "n") {
+  if (!charNum) {
     charNum = "";
   }
   else {
@@ -38,11 +32,9 @@ var charSelect = function() {
   }
 
   // include special characters
-  var charSpec = window.prompt('Would you like to include special characters?  Please enter "yes" or "no".');
+  var charSpec = confirm('Would you like to include special characters?');
 
-  charSpec = charSpec.toLowerCase();
-
-  if (charSpec === "no" || charSpec === "n") {
+  if (!charSpec) {
     charSpec = "";
   }
   else {
