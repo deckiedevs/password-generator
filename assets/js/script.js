@@ -59,7 +59,7 @@ var charSelect = function() {
     var charString = charLower + charUpper + charNum + charSpec
   }
   
-  console.log("Character set is " + charSet);
+  console.log("Character set is " + charString);
 
   return charString
 }
