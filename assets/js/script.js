@@ -41,19 +41,17 @@ var charSelect = function() {
     charSpec = "!@#$%&*+";
   }
 
+  // concatenates the selected character types
+  var charString = charLower + charUpper + charNum + charSpec
+  
   // validates that at least one character type is selected
-  if (!charLower && !charUpper && !charNum && !charSpec) {
-    window.alert("Please choose at least one type of character.");
-    charSelect();
+  if (charString.length > 0) {
+    console.log("Character string is " + charString);
+    return charString;
   }
   else {
-    // concatenates the selected character types
-    var charString = charLower + charUpper + charNum + charSpec
+    return charSelect();
   }
-  
-  console.log("Character set is " + charString);
-
-  return charString
 }
 
 var generatePassword = function() {
