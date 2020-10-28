@@ -70,7 +70,7 @@ var generatePassword = function() {
   var retPassword = "";
   
   for (var i = 0, n = charSet.length; i < charLength; i++) {
-    retPassword += charSet.charAt(Math.floor(Math.random() * n));
+    retPassword += charSet[Math.floor(Math.random() * n)];
   }
   console.log("Generated password is " + retPassword);
   
