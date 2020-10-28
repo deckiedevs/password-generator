@@ -1,4 +1,69 @@
 // Assignment code here
+var charSelect = function() {
+
+  // include lowercase characters
+  var charLower = window.prompt('Would you like to include lowercase characters?  Please enter "yes" or "no".');
+  
+  charLower = charLower.toLowerCase();
+
+  if (charLower === "no" || charLower === "n") {
+    charLower = "";
+  }               
+  else {
+    charLower = "abcdefghijklmnopqrstuvwxyz";
+  }
+
+  // include uppercase characters
+  var charUpper = window.prompt('Would you like to include uppercase characters?  Please enter "yes" or "no".');
+
+  charUpper = charUpper.toLowerCase();
+
+  if (charUpper === "no" || charUpper === "n") {
+    charUpper = "";
+  }
+  else {
+    charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+
+  // include numeric characters
+  var charNum = window.prompt('Would you like to include numbers?  Please enter "yes" or "no".');
+  
+  charNum = charNum.toLowerCase();
+
+  if (charNum === "no" || charNum === "n") {
+    charNum = "";
+  }
+  else {
+    charNum = "0123456789";
+  }
+
+  // include special characters
+  var charSpec = window.prompt('Would you like to include special characters?  Please enter "yes" or "no".');
+
+  charSpec = charSpec.toLowerCase();
+
+  if (charSpec === "no" || charSpec === "n") {
+    charSpec = "";
+  }
+  else {
+    charSpec = "!@#$%&*+";
+  }
+
+  // validates that at least one character type is selected
+  if (!charLower && !charUpper && !charNum && !charSpec) {
+    window.alert("Please choose at least one type of character.");
+    charSelect();
+  }
+  else {
+    // concatenates the selected character types
+    var charString = charLower + charUpper + charNum + charSpec
+  }
+  
+  console.log("Character set is " + charSet);
+
+  return charString
+}
+
 var generatePassword = function() {
   
   // setting character length
@@ -9,73 +74,8 @@ var generatePassword = function() {
     generatePassword();
   }
 
-  var charSelect = function() {
-
-    // include lowercase characters
-    var charLower = window.prompt('Would you like to include lowercase characters?  Please enter "yes" or "no".');
-    
-    charLower = charLower.toLowerCase();
-
-    if (charLower === "no" || charLower === "n") {
-      charLower = "";
-    }               
-    else {
-      charLower = "abcdefghijklmnopqrstuvwxyz";
-    }
-  
-    // include uppercase characters
-    var charUpper = window.prompt('Would you like to include uppercase characters?  Please enter "yes" or "no".');
-
-    charUpper = charUpper.toLowerCase();
-  
-    if (charUpper === "no" || charUpper === "n") {
-      charUpper = "";
-    }
-    else {
-      charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }
-  
-    // include numeric characters
-    var charNum = window.prompt('Would you like to include numbers?  Please enter "yes" or "no".');
-    
-    charNum = charNum.toLowerCase();
-
-    if (charNum === "no" || charNum === "n") {
-      charNum = "";
-    }
-    else {
-      charNum = "0123456789";
-    }
-  
-    // include special characters
-    var charSpec = window.prompt('Would you like to include special characters?  Please enter "yes" or "no".');
-
-    charSpec = charSpec.toLowerCase();
-
-    if (charSpec === "no" || charSpec === "n") {
-      charSpec = "";
-    }
-    else {
-      charSpec = "!@#$%&*+";
-    }
-
-    // validates that at least one character type is selected
-    if (!charLower && !charUpper && !charNum && !charSpec) {
-      window.alert("Please choose at least one type of character.");
-      charSelect();
-    }
-    else {
-      // concatenates the selected character types
-      var charSet = charLower + charUpper + charNum + charSpec
-    }
-    
-    console.log("Character set is " + charSet);
-
-    return charSet
-  }
-
-  var retPassword = "";
   var charSet = charSelect();
+  var retPassword = "";
   
   // generates password based on selected criteria
   for (var i = 0, n = charSet.length; i < charLength; i++) {
