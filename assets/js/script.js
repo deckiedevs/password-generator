@@ -6,8 +6,7 @@ var charSelect = function() {
   
   if (!charLower) {
     charLower = "";
-  }               
-  else {
+  } else {
     charLower = "abcdefghijklmnopqrstuvwxyz";
   }
 
@@ -16,8 +15,7 @@ var charSelect = function() {
 
   if (!charUpper) {
     charUpper = "";
-  }
-  else {
+  } else {
     charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
@@ -26,8 +24,7 @@ var charSelect = function() {
 
   if (!charNum) {
     charNum = "";
-  }
-  else {
+  } else {
     charNum = "0123456789";
   }
 
@@ -36,8 +33,7 @@ var charSelect = function() {
 
   if (!charSpec) {
     charSpec = "";
-  }
-  else {
+  } else {
     charSpec = "!@#$%&*+";
   }
 
@@ -48,8 +44,8 @@ var charSelect = function() {
   if (charString.length > 0) {
     console.log("Character string is " + charString);
     return charString;
-  }
-  else {
+  } else {
+    window.alert("Please choose at least one type of character.");
     return charSelect();
   }
 }
